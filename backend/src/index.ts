@@ -11,7 +11,7 @@ app.get("/api/v1/get-skills", async (req: any, res: any) => {
     try {
         return res.status(200).json({
             ok: true,
-            skills: SKILLS
+            skills: SKILLS.sort()
         });
     } catch(err) {
         return res.status(404).json({
