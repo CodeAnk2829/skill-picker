@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { SKILLS } from '../utils/skill';
 
 export default function LandingComponent() {
-    const [skillList, setSkillList] = useState<string[]>([]);
+    const [skillList, setSkillList] = useState<string[]>(SKILLS);
     const [skill, setSkill] = useState<string[]>([]);
-    const path_name = import.meta.env.VITE_BACKEND_URL;
+    // const path_name = import.meta.env.VITE_BACKEND_URL;
 
-    useEffect(() => {
-        fetch(path_name)
-            .then(async (res) => {
-                const json = await res.json();
-                setSkillList(json.skills);
-            })
-    }, []);
+    // useEffect(() => {
+    //     fetch(path_name)
+    //         .then(async (res) => {
+    //             const json = await res.json();
+    //             setSkillList(json.skills);
+    //             console.log(json.skills)
+    //         })
+    // }, []);
 
 
     async function handleClick(skill: string, key: number) {
