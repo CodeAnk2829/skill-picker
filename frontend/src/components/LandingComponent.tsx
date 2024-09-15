@@ -48,18 +48,20 @@ export default function LandingComponent() {
                     {/* make another component */}
                     {skill.map((value, key) => {
                         return (
-                            <span className='bg-slate-200 h-5 p-1 text-xs font-medium text-slate-600 rounded-md mr-2' key={key}>
-                                <span className='mr-1 rounded-md'>{value}</span>
-                                <button className='
+                            <div className='bg-slate-200 h-5 inline-block p-1 text-xs font-medium text-slate-600 rounded-md mr-2' key={key}>
+                                <div className='mr-1 rounded-md flex '>{value}
+                                    <button className='
                                     hover:bg-slate-200 
                                     p-0.5 
                                     rounded-sm'
-                                    onClick={() => {
-                                        buttonHandler(key)
-                                    }}
-                                >
-                                    <svg className="h-3 w-3 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>                </button>
-                            </span>
+                                        onClick={() => {
+                                            buttonHandler(key)
+                                        }}
+                                    >
+                                        <svg className="h-3 w-3 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                            </div>
                         )
                     })}
                 </div>
