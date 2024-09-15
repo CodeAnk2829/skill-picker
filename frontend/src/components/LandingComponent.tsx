@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { SKILLS } from '../utils/skills';
 
 export default function LandingComponent() {
-    const [skillList, setSkillList] = useState<string[]>([]);
+    const [skillList, setSkillList] = useState<string[]>(SKILLS);
     const [skill, setSkill] = useState<string[]>([]);
 
-    useEffect(() => {
-        fetch(`https://skill-picker-3.onrender.com/api/v1/get-skills`)
-            .then(async (res) => {
-                const json = await res.json();
-                setSkillList(json.skills);
-            })
-    }, []);
+    // useEffect(() => {
+    //     fetch(`https://skill-picker-3.onrender.com/api/v1/get-skills`)
+    //         .then(async (res) => {
+    //             const json = await res.json();
+    //             setSkillList(json.skills);
+    //         })
+    // }, []);
+
 
     async function handleClick(skill: string, key: number) {
         const selectedSkill: string = skill;
