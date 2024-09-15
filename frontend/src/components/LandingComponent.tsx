@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { SKILLS } from '../utils/skills';
+import { useState, useEffect } from 'react';
 
 export default function LandingComponent() {
-    const [skillList, setSkillList] = useState<string[]>(SKILLS);
+    const [skillList, setSkillList] = useState<string[]>([]);
     const [skill, setSkill] = useState<string[]>([]);
+    const path_name = import.meta.env.VITE_BACKEND_URL;
 
-    // useEffect(() => {
-    //     fetch(`https://skill-picker-3.onrender.com/api/v1/get-skills`)
-    //         .then(async (res) => {
-    //             const json = await res.json();
-    //             setSkillList(json.skills);
-    //         })
-    // }, []);
+    useEffect(() => {
+        fetch(path_name)
+            .then(async (res) => {
+                const json = await res.json();
+                setSkillList(json.skills);
+            })
+    }, []);
 
 
     async function handleClick(skill: string, key: number) {
