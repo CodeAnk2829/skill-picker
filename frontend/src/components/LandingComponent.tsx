@@ -43,7 +43,7 @@ export default function LandingComponent() {
 
     return (
         <div className='flex flex-col items-center p-5 h-screen w-full justify-center text-center sm:text-left'>
-            <div className='grid grid-cols-8 content-center h-20 md:w-1/2 sm:w-1/2 w-1/2 max-w-screen-sm bg-white mb-5 text-balance p-1 border-2 border-slate-300 rounded-sm'>
+            <div className='grid grid-cols-8 content-center h-20 md:w-1/2 sm:w-1/2 w-1/2 max-w-screen-sm bg-white mb-5 text-balance p-1 pl-3 border-2 border-slate-300 rounded-sm'>
                 <div className='col-span-7 overflow-y-scroll scrollbar-hide'>
                     {/* make another component */}
                     {skill.map((value, key) => {
