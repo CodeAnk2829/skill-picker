@@ -42,8 +42,8 @@ export default function LandingComponent() {
     }
 
     return (
-        <div className='flex flex-col items-center p-5 h-screen w-full justify-center'>
-            <div className='grid grid-cols-8 content-center h-16 w-1/3 bg-white mb-5 overflow-y-auto text-balance p-3 border-2 border-slate-300 rounded-sm'>
+        <div className='flex flex-col items-center p-5 h-screen w-full justify-center text-center sm:text-left'>
+            <div className='grid grid-cols-8 content-center h-16 md:w-1/2 sm:w-1/2 w-1/2 max-w-screen-sm bg-white mb-5 overflow-y-auto text-balance p-3 border-2 border-slate-300 rounded-sm'>
                 <div className='col-span-7'>
                     {/* make another component */}
                     {skill.map((value, key) => {
@@ -69,7 +69,7 @@ export default function LandingComponent() {
                     </button>
                 </div>
             </div>
-            <div className='h-60 w-1/3 bg-white overflow-y-auto scrollbar-hide border-2 border-slate-300 rounded-sm'>
+            <div className='h-60 md:w-1/2 sm:w-1/2 max-w-screen-sm w-1/2 bg-white overflow-y-auto scrollbar-hide border-2 border-slate-300 rounded-sm'>
                 <ul role='list'>
                     {skillList.map((skill, key) => {
                         return <li key={key} className='group/item  h-10 p-3  cursor-pointer content-center' onClick={() => handleClick(skill, key)}>
